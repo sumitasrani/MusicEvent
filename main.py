@@ -1,8 +1,9 @@
+import os
+import smtplib
+import ssl
+import time
 import requests
 import selectorlib
-import smtplib, ssl
-import os
-import time
 
 URL = "http://programmer100.pythonanywhere.com/tours/"
 
@@ -26,7 +27,7 @@ def send_email(message):
     port = 465
 
     username = "sumitasranicoder@gmail.com"
-    password = "dsrkdvrqokbqrrss"
+    password = os.getenv("password_event")
 
     receiver = "sumitasranicoder@gmail.com"
     context = ssl.create_default_context()
